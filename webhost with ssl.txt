@@ -15,6 +15,7 @@ String Destination = "";
 String getData = "";
 String payloadGet = "";
 
+//If webhost server is using https
 HTTPClient http; // Declare object of class HTTPClient
 WiFiClientSecure client; // Use WiFiClientSecure for secure connection
 
