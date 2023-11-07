@@ -1,5 +1,5 @@
 # Intelligent Room Access Using Computer Vision
-The Intelligent Room Access Using Computer Vision is an innovative solution that combines Python Tkinter, MySQL database, and Arduino IDE to create a seamless and efficient system.. Face recognition algorithms are used in this project to reliably identify persons and record their attendance in real-time. The system offers easy interaction and navigation for users by employing a user-friendly interface designed using Tkinter. The MySQL database serves as a dependable repository for securely preserving attendance records and user information. Furthermore, the Arduino IDE connection enables control of the door lock system, providing access to authorized personnel upon successful attendance recognition. This project leverages these technologies to provide a complete, secure, and dependable solution for attendance management and door access control.
+The Intelligent Room Access Using Computer Vision is an innovative solution that combines Python OpenCV, MySQL database, HTML/CSS, PHP and Arduino IDE(C++, Iot)to create a seamless and efficient system. Face recognition algorithms are used in this project to reliably identify persons and record their attendance in real-time. The system offers easy interaction and navigation for users by employing a user-friendly interface designed using Python Tkinter. The MySQL database serves as a dependable repository for securely preserving attendance records and user information. Furthermore, the Arduino IDE connection enables control of the door lock system, providing access to authorized personnel upon successful attendance recognition. This project leverages these technologies to provide a complete, secure, and dependable solution for attendance management and door access control.
 
 
 To effectively launch the project on your machine, you must follow a few simple steps. First, make sure you've installed all of the dependencies listed in the requirements.txt file. Next, ensure that you have a MySQL server installed and have a basic understanding of its functions. With these prerequisites in place, proceed with the project requirements to establish the necessary database, tables, and declare default data. This includes creating the database, specifying the table architecture, and populating it with default data as needed. You will be able to successfully launch the project on your machine if you follow these procedures.
@@ -9,7 +9,7 @@ To effectively launch the project on your machine, you must follow a few simple 
 
 - Python 3.11
 
-### windows
+### for windows user
 
 Before beginning the installation process in Windows, you must complete the following extra steps:
 - Follow the instructions described in this video https://www.youtube.com/watch?v=xaDJ5xnc8dc, from the minute 4:39 to 6:07
@@ -99,7 +99,7 @@ password = admincea
 
 ## 6. Hardware Circuit Design and Development
 
-This si the simplified instructions for connecting the components in the circuit.
+This sit the simplified instructions for connecting the components in the circuit.
 ### LM2596 Buck Converter:
    - Connect the positive terminal of the 12V DC adapter to the LM2596's VIN pin.
    - Connect the negative terminal of the 12V DC adapter to the LM2596's GND pin.
@@ -138,7 +138,7 @@ pause
 
 ## 8. Note: No Copyright Infringement Intended
 
-This system was created solely for academic purposes, ensuring complete conformity with copyright regulations. The developer would like to thank and recognize the various web resources that served as the foundation for this system. It is critical to note that this implementation, which functions as an attendance and door lock system, has been specifically customized for its intended purpose. While drawing on existing publicly available systems for inspiration, this implementation stands apart from any previously disclosed system. The developer's vision, purpose, and purposeful changes have all played a role in building this system. This system was initially developed using a variety of web resources, and it was later improved by Vener C. Servito, a Computer Engineering student at Urdaneta City University.
+This system was created solely for academic purposes, ensuring complete conformity with copyright regulations. The developer would like to thank and recognize the various web resources that served as the foundation for this system. It is critical to note that this implementation, which functions as an face recognition, attendance, and door lock system, has been specifically customized for its intended purpose. While drawing on existing publicly available systems for inspiration, this implementation stands apart from any previously disclosed system. The developer's vision, purpose, and purposeful changes have all played a role in building this system. This system was initially developed using a variety of web resources, and it was later improved by Vener C. Servito, a Computer Engineering student at Urdaneta City University.
 
 ## 9. CPEnois TEAM:
 
