@@ -7,11 +7,11 @@
 const int relay = D1; // Defines a relay Pin (D1)
 
 //SSID and Password of your WiFi router.
-const char* ssid = "NoHotspot"; //--> wifi SSID.
-const char* password = "Recon+05"; //--> wifi password.
+const char* ssid = ""; //--> wifi SSID.
+const char* password = ""; //--> wifi password.
 
 //Web Server address / IPv4 ipconfig
-String host_or_IPv4 = "http://192.168.97.21/";
+String host_or_IPv4 = "";
 
 String Destination = "";
 String URL_Server = "";
