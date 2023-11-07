@@ -19,7 +19,7 @@ Before beginning the installation process in Windows, you must complete the foll
 
 ### "face recog.rar" file is the Python Code for Face Recognition
 ### "public_html.zip" file is the Code for web system
-### "database-to-nodeMCU.ino" file is for the door lock. It sends and recieve signals from the PHP-API. Note this file is fot http only if your web uses https implement the "webhost with ssl.txt" instead
+### "database-to-nodeMCU.ino" file is for the door lock. It sends and recieve signals from the PHP-API. Note this file is for http only if your web uses https implement the "webhost with ssl.txt" instead.
 
 ## 1. Create a database with this name, "iraucv_db"
 
