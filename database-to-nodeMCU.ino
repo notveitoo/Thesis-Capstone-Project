@@ -18,6 +18,7 @@ String URL_Server = "";
 String getData = "";
 String payloadGet = "";
 
+//If webhost server is using https instead of http. Use the codes "webhost with ssl.txt"
 HTTPClient http; // Declare object of class HTTPClient
 WiFiClient client;
 //----------------------------------------
