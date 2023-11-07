@@ -1,0 +1,76 @@
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClientSecure.h>
+
+#define ON_Board_LED D4  // Defining an On Board LED D4, used for indicators when the process of connecting and connected to internet
+
+const int relay = D1; // Defines a relay Pin (D1)
+
+const char* ssid = "TECNO POVA 4 Pro"; //--> wifi SSID.
+const char* password = "vvvvvvvv"; //--> wifi password.
+
+//Web Server address / IPv4 ipconfig
+String host_or_IPv4 = "cpenois.online";
+String Destination = "";
+String getData = "";
+String payloadGet = "";
+
+HTTPClient http; // Declare object of class HTTPClient
+WiFiClientSecure client; // Use WiFiClientSecure for secure connection
+
+//----------------------------------------
+
+void setup() {
+  Serial.begin(115200);
+  delay(500);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password); // Connect to WiFi router
+
+  pinMode(ON_Board_LED, OUTPUT); // On Board LED port Direction output
+  digitalWrite(ON_Board_LED, HIGH); // Turn off Led On Board
+
+  //Wait for connection
+  Serial.print("Connecting");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    //Make the On Board Flashing LED on the process of connecting to the wifi router.
+    digitalWrite(ON_Board_LED, LOW);
+    delay(250);
+    digitalWrite(ON_Board_LED, HIGH);
+    delay(250);
+  }
+  digitalWrite(ON_Board_LED, LOW); // Turn on the On Board LED when it is connected to the wifi router.
+}
+
+void loop() {
+  //Getting Data from MySQL Database
+  int id = 1; // ID in Database
+  getData = "ID=" + String(id);
+  Destination = "/system-cea/GetData.php";
+  String URL_Server = "https://" + host_or_IPv4 + Destination;
+
+  client.setInsecure(); // Disable SSL/TLS certificate verification (for self-signed certificates)
+
+  if (http.begin(client, URL_Server)) { // Specify request destination
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");    //Specify content-type header
+    int httpCodeGet = http.POST(getData); // Send the request
+    if (httpCodeGet == HTTP_CODE_OK) {
+      payloadGet = http.getString();
+      Serial.println(payloadGet); // Print request response payload
+
+      if (payloadGet == "0") { //if false door will lock
+        digitalWrite(relay, LOW); //--> Turn on relay
+        digitalWrite(ON_Board_LED, HIGH);
+      }
+      if (payloadGet == "1") { //if true door will unlock
+        digitalWrite(relay, HIGH); //--> Turn off relay
+        digitalWrite(ON_Board_LED, LOW);
+      }
+    } else {
+      Serial.printf("HTTP POST request failed with error code: %d\n", httpCodeGet);
+    }
+
+    http.end(); //--> Close connection
+  }
+}
