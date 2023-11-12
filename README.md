@@ -149,7 +149,7 @@ Labrador, Hilbert R. - Research Encoder
 
 Mandapat, Jesus G. - Circuit Assembler
 
-Porras, Karlo L. - Survey Conductee
+Porras, Karlo L. - Surveyor
 
 Servito, Vener C. - System Developer
 
